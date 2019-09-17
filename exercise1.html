@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="id">
+<input type="text" id="name">
+<input type="text" id="age">
+<input type="text" id="address">
+<button type="button" onclick="show()">show</button>
+<script>
+    let Pharmacist = function (id, name, age, address) {
+
+        this.name = name;
+        this.age = age;
+        this.id = id;
+        this.address = address;
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name = name;
+        };
+        this.getAge = function () {
+            return this.age;
+        };
+        this.setAge = function (age) {
+            this.age = age;
+        };
+        this.getId = function () {
+            return this.id;
+        };
+        this.setId = function (id) {
+            this.id = id;
+        };
+        this.getAddress = function () {
+            return this.address;
+        };
+        this.setAddress = function (address) {
+            this.address = address;
+        };
+    };
+    let a=document.getElementById("id").value;
+    let b=document.getElementById("name").value;
+let c=document.getElementById("age").value;
+let d=document.getElementById("address").value;
+    let pharmacist1 = new Pharmacist(a,b,c,d);
+    let pName1 = pharmacist1.getName();
+    let pAge1 = pharmacist1.getAge();
+    let pId1 = pharmacist1.getId();
+    let pAddress = pharmacist1.getAddress();
+    let PharmacistManager = function () {
+        this.getShow = function (arr) {
+            arr=[pName1,pAge1,pId1,pAddress];
+            return arr;
+        }
+    };
+    let manager = new PharmacistManager();
+
+    let aladin = manager.getShow();
+    function show() {
+        console.log(aladin);
+    }
+</script>
+</body>
+</html>
